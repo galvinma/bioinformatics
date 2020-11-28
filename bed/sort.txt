@@ -1,0 +1,16 @@
+How can you use the sort function to sort a bed file by chromosome and position?
+
+Example of unsorted bed:
+
+CHR START END
+9	138338321	138339032
+10	998193	999290
+9	139327439	140167730
+
+```
+
+sort -k1,1 -k2,2n -k3,3n a.bed > asort.bed
+
+-n: numerical
+-r: reverse
+-k, --key=POS1[,POS2]     start a key at POS1 (origin 1), end it at POS2 (default end of line)

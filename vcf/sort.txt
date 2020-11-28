@@ -1,0 +1,9 @@
+How could you sort a VCF file on chromosome, then position?
+
+---
+
+# Move the header...
+grep "^#" input.vcf > sorted.vcf
+
+# Sort the variants
+grep -v "^#" input.vcf | sort -k1,1V -k2,2g >> sorted.vcf

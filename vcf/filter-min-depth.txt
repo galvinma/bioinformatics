@@ -1,0 +1,10 @@
+Given the following VCF, how could you filter all the variants of a minimum read depth to a new file?
+
+CHR   POS           ...     DEPTH       
+
+chr1    13216720    ...     DP=345
+chr1    13216728    ...     DP=1231
+
+---
+
+awk -v MIN_DEPTH="$1" -v DEPTH_INDEX="$2" '{ split($DEPTH_INDEX, a, "=");  if (a[2] >= MIN_DEPTH) print $0 }' input.vcf > output.vcf

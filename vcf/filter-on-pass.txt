@@ -1,0 +1,10 @@
+Given a vcf of format 
+
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER 
+chr3    73      .       G       A       984.77  PASS
+
+How could you filter passing variants to a new vcf?
+
+---
+
+awk '$7=="PASS" {print $0}' input.vcf > output.vcf

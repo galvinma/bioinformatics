@@ -1,0 +1,13 @@
+Given a VCF of format:
+
+CHR   POS   ID   REF   ALT
+
+chr1    13216720    .    AAA    TTT 
+chr1    13216728    .    .    T 
+
+How could you filter all the snvs to a new file?
+
+---
+
+awk -v OUTPUT_PATH="$OUTPUT_PATH" '{ if (length($4) > 0 && length($5) > 0) print $0 >> OUTPUT_PATH }' $INPUT_PATH
+
