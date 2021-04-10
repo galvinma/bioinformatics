@@ -12,4 +12,5 @@ then
     docker run -v $PWD/host/dir:/container/dir -it $1 bash
 else
     echo "In test/dev mode..."
+    # Your dev cmd here...
 fi
